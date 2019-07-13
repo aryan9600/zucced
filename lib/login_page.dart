@@ -171,9 +171,9 @@ class _LoginPageState extends State<LoginPage>{
           children: <Widget>[
             SizedBox(height: 30.0),
             Image.asset('assets/images/logo.png', height: 100.0, width: 100.0,),
-            SizedBox(height: 65.0),
+            SizedBox(height: 55.0),
             Text('you just got zucced', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),textAlign: TextAlign.center,),
-            SizedBox(height: 45.0),
+            SizedBox(height: 55.0),
             Form(
               key: formKey,
               child: new Column(

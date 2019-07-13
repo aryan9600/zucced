@@ -41,9 +41,8 @@ class _SearchListExampleState extends State<SearchListExample> {
       style: TextStyle(
         color: Colors.black,
       ),
-      decoration: InputDecoration(
+      decoration: InputDecoration.collapsed(
         hintText: 'Search',
-        //border: OutlineInputBorder(isOutline: true)
         //fillColor: Colors.white
       ),
       onChanged: searchOperation
@@ -53,14 +52,14 @@ class _SearchListExampleState extends State<SearchListExample> {
 
   void values() {
     _list = List();
-    /*_list.add("Super cheap dress");
+    _list.add("Super cheap dress");
     _list.add("10 rupiya tshirt");
     _list.add("5 paisa chappal");
     _list.add("\$100000000 iphone");
     _list.add("tv smart (firestick only lol)");
     _list.add("baagri market gucci");
     _list.add("ramdev baba stuff");
-    _list.add("gaumutra");*/
+    _list.add("gaumutra");
   }
 
   @override
@@ -101,7 +100,7 @@ class _SearchListExampleState extends State<SearchListExample> {
   }
 
   Widget buildAppBar(BuildContext context) {
-    return new AppBar(centerTitle: true, title: appBarTitle, backgroundColor: Colors.white,
+    return new AppBar(centerTitle: true, title: appBarTitle,brightness: Brightness.dark, iconTheme: IconThemeData(color: Colors.black), backgroundColor: Colors.white
       /*new IconButton(
         icon: icon,
         onPressed: () {
