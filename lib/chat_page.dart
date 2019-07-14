@@ -30,12 +30,11 @@ class _ChatPageState extends State<ChatPage> {
         ],
         title: Text('Chats', style: TextStyle(color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.w700),),
      ),
-     body: SafeArea(
-       child: Container(
-         padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
+     body: Container(
+         padding: const EdgeInsets.fromLTRB(5, 15, 5, 0),
          child: Column(
            children: <Widget>[
-              Flexible(
+              Container(
                 child: TextField(
                 decoration: new InputDecoration(
                   prefixIcon: Icon(Icons.search),
@@ -56,10 +55,9 @@ class _ChatPageState extends State<ChatPage> {
                 ),
               ),
               SizedBox(height: 10),
-              Flexible(child:ChatBody())
+              Expanded(child:ChatBody())
            ],
          ),
-       ),
      ),
      bottomNavigationBar: BottomNavigationBar(
        type: BottomNavigationBarType.fixed,

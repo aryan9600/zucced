@@ -21,17 +21,6 @@ class Stories extends StatelessWidget {
               width: 60,
               height: 60,
               padding:const EdgeInsets.all(5),
-              /*decoration: new BoxDecoration(
-                shape: BoxShape.circle,
-                border: new Border.all(
-                  width: 4.0,
-                  color: Colors.blue[800]
-                ),
-                image: new DecorationImage(
-                  image: NetworkImage('https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2019/04/16/b175e025-2b52-4db9-b152-b8b7bbacecc1/mini_2019-04-16-BARCELONA-MANCHESTER-32.JPG?width=1200&height=750'),
-                  fit: BoxFit.fill,
-                )              
-              ),*/
               child: ClipOval(
                 child: Image.network(
                   'https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2019/04/16/b175e025-2b52-4db9-b152-b8b7bbacecc1/mini_2019-04-16-BARCELONA-MANCHESTER-32.JPG?width=1200&height=750',

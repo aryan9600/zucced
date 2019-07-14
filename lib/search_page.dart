@@ -60,6 +60,10 @@ class _SearchListExampleState extends State<SearchListExample> {
     _list.add("baagri market gucci");
     _list.add("ramdev baba stuff");
     _list.add("gaumutra");
+
+    _list.add("gaumutra");
+    _list.add("gaumutra");
+    _list.add("gaumutra");
   }
 
   @override
