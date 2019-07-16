@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zucced/chat_page.dart';
+import 'package:zucced/people_page.dart';
 import 'search_page.dart';
 import 'login_page.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       routes: {
        // '/': (context) => LoginPage(),
         '/chat': (context) => ChatPage(),
+        '/people': (context) => PeoplePage(),
         '/search': (context) => SearchListExample()
       },
       title: 'Flutter Demo',

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'chat_body.dart';
 
 class ChatPage extends StatefulWidget {
@@ -34,50 +33,81 @@ class _ChatPageState extends State<ChatPage> {
          padding: const EdgeInsets.fromLTRB(5, 15, 5, 0),
          child: Column(
            children: <Widget>[
-              Container(
-                child: TextField(
-                decoration: new InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  contentPadding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                  border: new OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(
-                      const Radius.circular(30.0)
-                    ),
-                    borderSide: BorderSide(width: 0, style: BorderStyle.none)
-                  ),
-                  filled: true,
-                  hintStyle: new TextStyle(color: Colors.grey[600]),
-                  hintText: "Search",
-                  fillColor: Colors.grey[200],
-                ),
-                controller: _searchController,
-                onTap: (){Navigator.pushNamed(context, '/search');},
-                ),
-              ),
+              //new SearchBar(searchController: _searchController),
               SizedBox(height: 10),
               Expanded(child:ChatBody())
            ],
          ),
      ),
-     bottomNavigationBar: BottomNavigationBar(
-       type: BottomNavigationBarType.fixed,
-       items:  <BottomNavigationBarItem>[
-         BottomNavigationBarItem(
-           icon: Icon(Icons.chat_bubble, color: Colors.black,),
-           title: new Container(height: 0,)
-         ),
-         BottomNavigationBarItem(
-           icon: Icon(Icons.people, color: Colors.black,),
-           title: new Container(height: 0,)
-         ),
-         BottomNavigationBarItem(
-           icon: Icon(Icons.wifi_tethering, color: Colors.black,),
-           title: new Container(height: 0,)
-         )
-       ],
-       elevation: 20,
-       iconSize: 30,
-     ),
+     bottomNavigationBar: new BottomBar(),
+    );
+  }
+}
+
+class BottomBar extends StatelessWidget {
+  const BottomBar({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      items:  <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: GestureDetector(
+            child: Icon(Icons.chat_bubble, color: Colors.black,),
+            onTap: (){Navigator.pushNamed(context, '/chat');},
+          ),
+          title: new Container(height: 0,)
+        ),
+        BottomNavigationBarItem(
+          icon: GestureDetector(child: Icon(Icons.people, color: Colors.black,), 
+           onTap:() {Navigator.pushNamed(context, '/people');}
+           ),
+           title: new Container(height: 0,),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.wifi_tethering, color: Colors.black,),
+          title: new Container(height: 0,)
+        )
+      ],
+      elevation: 20,
+      iconSize: 30,
+    );
+  }
+}
+
+class SearchBar extends StatelessWidget {
+  const SearchBar({
+    Key key,
+    @required TextEditingController searchController,
+  }) : _searchController = searchController, super(key: key);
+
+  final TextEditingController _searchController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+      child: TextField(
+      decoration: new InputDecoration(
+        prefixIcon: Icon(Icons.search),
+        contentPadding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+        border: new OutlineInputBorder(
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(30.0)
+          ),
+          borderSide: BorderSide(width: 0, style: BorderStyle.none)
+        ),
+        filled: true,
+        hintStyle: new TextStyle(color: Colors.grey[600]),
+        hintText: "Search",
+        fillColor: Colors.grey[200],
+      ),
+      controller: _searchController,
+      onTap: (){Navigator.pushNamed(context, '/search');},
+      ),
     );
   }
 }
