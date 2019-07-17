@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'chat_page.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
-import 'models/stories_model.dart';
+//import 'models/stories_model.dart';
+import 'active_list.dart';
+import 'people_list.dart';
 
 class PeoplePage extends StatefulWidget {
   @override
@@ -66,26 +68,8 @@ class _PeoplePageState extends State<PeoplePage> with SingleTickerProviderStateM
       body: new TabBarView(
         controller: _tabController,
         children: <Widget>[
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: GridView.count(
-            crossAxisCount: 2,
-            crossAxisSpacing: 0,
-            mainAxisSpacing: 10,
-            children: List.generate(storiesData.length, (index) {
-              return Align(
-                        child: AspectRatio(
-                        aspectRatio: 0.85,
-                        child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image.network(storiesData[index].picUrl, fit:BoxFit.cover,),
-                      ),
-                ),
-              );
-            }),
-        ),
-          ),
-        new Container(child: Text('todo'),),
+        new PeopleList(),
+        new ActiveList()
         ],
       ),
     );
