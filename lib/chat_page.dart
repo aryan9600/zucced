@@ -68,7 +68,10 @@ class BottomBar extends StatelessWidget {
            title: new Container(height: 0,),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.wifi_tethering, color: Colors.black,),
+          icon: GestureDetector(
+            child: Icon(Icons.wifi_tethering, color: Colors.black,),
+            onTap: (){Navigator.pushNamed(context, '/discover');},
+          ),
           title: new Container(height: 0,)
         )
       ],
