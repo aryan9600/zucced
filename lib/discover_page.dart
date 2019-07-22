@@ -34,10 +34,13 @@ class _DiscoverPageState extends State<DiscoverPage> with SingleTickerProviderSt
             )
           ),
         ),
-        title: Text('Discover', style: TextStyle(color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.w700),),
-        bottom: AppBar(
-          title: SearchBar(searchController: _searchController,),
-          bottom: new TabBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Text('Discover', style: TextStyle(color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.w700),),
+          ],
+        ),
+        bottom: new TabBar(
             //indicatorPadding: const EdgeInsets.all(20),
             indicatorSize: TabBarIndicatorSize.label,
             controller: _tabController,
@@ -51,14 +54,13 @@ class _DiscoverPageState extends State<DiscoverPage> with SingleTickerProviderSt
               new Tab(text: 'GAMES'),
             ],
             indicator: new BubbleTabIndicator(
-              padding: const EdgeInsets.fromLTRB(60,0,60,0),
+              padding: const EdgeInsets.fromLTRB(50,0,50,0),
               //insets: EdgeInsets.all(10),
               indicatorColor: Colors.grey[300],
               indicatorHeight: 25.0,
               tabBarIndicatorSize: TabBarIndicatorSize.label,
             ),
           ),
-        ),
       ),
       bottomNavigationBar: BottomBar(), 
       body: new TabBarView(
